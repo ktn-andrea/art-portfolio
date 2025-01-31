@@ -1,0 +1,9 @@
+{
+  "name": "my_fullstack_app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/my_fullstack_app",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project my_fullstack_app --web",
+  "targets": {}
+}
