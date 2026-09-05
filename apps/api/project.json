@@ -17,6 +17,27 @@
         "command": "python manage.py migrate",
         "cwd": "apps/api"
       }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "env\\Scripts\\ruff.exe check .",
+        "cwd": "apps/api"
+      }
+    },
+    "format": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "env\\Scripts\\ruff.exe format .",
+        "cwd": "apps/api"
+      }
+    },
+    "format-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "env\\Scripts\\ruff.exe format --check .",
+        "cwd": "apps/api"
+      }
     }
   }
 }
