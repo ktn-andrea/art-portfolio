@@ -16,19 +16,19 @@
 To run the dev server for your app, use:
 
 ```sh
-npx nx dev my_fullstack_app
+npx nx dev art-portfolio
 ```
 
 To create a production bundle:
 
 ```sh
-npx nx build my_fullstack_app
+npx nx build art-portfolio
 ```
 
 To see all available targets to run for a project, run:
 
 ```sh
-npx nx show project my_fullstack_app
+npx nx show project art-portfolio
 ```
 
 These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
