@@ -29,6 +29,7 @@ venv/
 # Django
 *.sqlite3
 media/
+apps/api/media/
 
 # Environment variables
 .env

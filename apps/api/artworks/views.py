@@ -1,5 +1,9 @@
-from django.http import HttpResponse
+from rest_framework import generics
+
+from .models import Artwork
+from .serializers import ArtworkSerializer
 
 
-def index(request):
-    return HttpResponse("Hello, world. Welcome to artworks app.")
+class ArtworkListView(generics.ListAPIView):
+    queryset = Artwork.objects.all()
+    serializer_class = ArtworkSerializer

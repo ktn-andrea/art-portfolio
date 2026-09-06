@@ -1,5 +1,7 @@
 from django.urls import path
 
-from . import views
+from .views import ArtworkListView
 
-urlpatterns = [path("", views.index, name="index")]
+urlpatterns = [
+    path("", ArtworkListView.as_view(), name="artwork-list"),
+]
