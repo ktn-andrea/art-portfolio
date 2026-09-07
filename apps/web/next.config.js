@@ -7,17 +7,21 @@ const { composePlugins, withNx } = require("@nx/next");
  **/
 const nextConfig = {
 	nx: {
-		// Set this to true if you would like to to use SVGR
-		// See: https://github.com/gregberge/svgr
 		svgr: false,
 	},
-
+	images: {
+		remotePatterns: [
+			{
+				protocol: "http",
+				hostname: "127.0.0.1",
+				port: "8000",
+				pathname: "/media/**",
+			},
+		],
+	},
 	compiler: {},
 };
 
-const plugins = [
-	// Add more Next.js plugins to this list if needed.
-	withNx,
-];
+const plugins = [withNx];
 
 module.exports = composePlugins(...plugins)(nextConfig);
