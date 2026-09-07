@@ -1,17 +1,9 @@
-import Image from "next/image";
 import { useEffect, useState } from "react";
+import Gallery from "../components/Gallery/Gallery";
+import Header from "../components/Header/Header";
+import Hero from "../components/Hero/Hero";
 import { getArtworks } from "../lib/api";
-
-type Artwork = {
-	id: number;
-	title: string;
-	description: string;
-	image: string;
-	year: number;
-	medium: string;
-	dimensions: string;
-	created_at: string;
-};
+import type { Artwork } from "../types/artwork";
 
 export default function Home() {
 	const [artworks, setArtworks] = useState<Artwork[]>([]);
@@ -21,22 +13,14 @@ export default function Home() {
 	}, []);
 
 	return (
-		<main>
-			<h1>Art Portfolio</h1>
+		<>
+			<Header />
 
-			{artworks.map((artwork) => (
-				<article key={artwork.id}>
-					<h2>{artwork.title}</h2>
-					<Image
-						src={artwork.image}
-						alt={artwork.title}
-						width={500}
-						height={500}
-					/>
-					<p>{artwork.medium}</p>
-					<p>{artwork.year}</p>
-				</article>
-			))}
-		</main>
+			<main>
+				<Hero />
+
+				<Gallery artworks={artworks} />
+			</main>
+		</>
 	);
 }

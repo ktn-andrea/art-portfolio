@@ -1,0 +1,49 @@
+.gallery {
+	padding: 4rem 0 10rem;
+}
+
+.heading {
+	margin-bottom: 4rem;
+}
+
+.heading p {
+	margin: 0;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+}
+
+.artworks {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	column-gap: 2rem;
+	row-gap: 8rem;
+}
+
+.large {
+	grid-column: 2 / 7;
+}
+
+.medium {
+	grid-column: 8 / 12;
+	margin-top: 3rem;
+}
+
+.small {
+	grid-column: 3 / 6;
+	margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+	.artworks {
+		grid-template-columns: 1fr;
+		row-gap: 5rem;
+	}
+
+	.large,
+	.medium,
+	.small {
+		grid-column: 1;
+		margin-top: 0;
+	}
+}
