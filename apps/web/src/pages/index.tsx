@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import AboutPreview from "../components/AboutPreview/AboutPreview";
 import Gallery from "../components/Gallery/Gallery";
 import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
@@ -20,6 +21,8 @@ export default function Home() {
 				<Hero />
 
 				<Gallery artworks={artworks} />
+
+				<AboutPreview />
 			</main>
 		</>
 	);

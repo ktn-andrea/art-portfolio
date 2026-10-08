@@ -1,0 +1,42 @@
+.about {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	gap: 4rem;
+	padding: 8rem 0;
+	border-top: 1px solid currentColor;
+}
+
+.label {
+	margin: 0;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+}
+
+.content {
+	max-width: 650px;
+}
+
+.content h2 {
+	margin: 0 0 2rem;
+	font-size: 2rem;
+	font-weight: 400;
+}
+
+.content p {
+	margin: 0 0 2rem;
+	font-size: 1.2rem;
+	line-height: 1.6;
+}
+
+.content a {
+	text-decoration: none;
+}
+
+@media (max-width: 768px) {
+	.about {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+		padding: 5rem 0;
+	}
+}
