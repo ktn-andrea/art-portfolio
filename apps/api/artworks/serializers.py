@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Artwork
+from .models import Artist, Artwork
 
 
 class ArtworkSerializer(serializers.ModelSerializer):
@@ -15,4 +15,18 @@ class ArtworkSerializer(serializers.ModelSerializer):
             "medium",
             "dimensions",
             "created_at",
+        )
+
+
+class ArtistSerializer(serializers.ModelSerializer):
+    artworks = ArtworkSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Artist
+        fields = (
+            "id",
+            "name",
+            "bio",
+            "created_at",
+            "artworks",
         )
