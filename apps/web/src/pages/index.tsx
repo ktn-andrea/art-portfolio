@@ -1,4 +1,5 @@
 import type { GetServerSideProps } from "next";
+import Link from "next/link";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import { getArtists } from "../lib/api";
@@ -39,7 +40,10 @@ export default function Home({ artists }: HomeProps) {
 						<ul>
 							{artists.map((artist) => (
 								<li key={artist.id}>
-									<h2>{artist.name}</h2>
+									<Link href={`/artists/${artist.id}`}>
+										<h2>{artist.name}</h2>
+									</Link>
+
 									{artist.bio && <p>{artist.bio}</p>}
 									<p>{artist.artworks.length} artworks</p>
 								</li>

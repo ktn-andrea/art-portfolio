@@ -21,3 +21,13 @@ export async function getArtists(): Promise<Artist[]> {
 
 	return response.json();
 }
+
+export async function getArtist(id: number): Promise<Artist> {
+	const response = await fetch(`${API_URL}/api/artists/${id}/`);
+
+	if (!response.ok) {
+		throw new Error(`Failed to fetch artist with ID ${id}`);
+	}
+
+	return response.json();
+}
