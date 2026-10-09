@@ -4,13 +4,12 @@ export default function Footer() {
 	return (
 		<footer className={styles.footer}>
 			<div>
-				<p>Artist Name</p>
+				<p>Footer info</p>
 				<p>© 2026</p>
 			</div>
 
 			<nav className={styles.links}>
 				<a href="/about">About</a>
-				<a href="https://instagram.com">Instagram</a>
 			</nav>
 		</footer>
 	);

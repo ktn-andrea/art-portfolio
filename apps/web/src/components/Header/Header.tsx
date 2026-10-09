@@ -4,7 +4,7 @@ export default function Header() {
 	return (
 		<header className={styles.header}>
 			<a href="/" className={styles.logo}>
-				Artist Name
+				Header
 			</a>
 
 			<nav className={styles.nav}>
