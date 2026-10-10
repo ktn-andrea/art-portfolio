@@ -1,4 +1,5 @@
 import type { Artist } from "../types/artist";
+import type { Discipline } from "../types/discipline";
 
 const API_URL = "http://127.0.0.1:8000";
 
@@ -27,6 +28,16 @@ export async function getArtist(id: number): Promise<Artist> {
 
 	if (!response.ok) {
 		throw new Error(`Failed to fetch artist with ID ${id}`);
+	}
+
+	return response.json();
+}
+
+export async function getDisciplines(): Promise<Discipline[]> {
+	const response = await fetch(`${API_URL}/api/disciplines/`);
+
+	if (!response.ok) {
+		throw new Error("Failed to fetch disciplines");
 	}
 
 	return response.json();

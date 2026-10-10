@@ -7,10 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": [
-			"apps/web/**",
-			"!apps/web/.next/**"
-		]
+		"includes": ["apps/web/**", "!apps/web/.next", "!apps/web/public/images"]
 	},
 	"formatter": {
 		"enabled": true,

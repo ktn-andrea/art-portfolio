@@ -1,7 +1,7 @@
 from rest_framework import generics
 
-from .models import Artist, Artwork
-from .serializers import ArtistSerializer, ArtworkSerializer
+from .models import Artist, Artwork, Discipline
+from .serializers import ArtistSerializer, ArtworkSerializer, DisciplineSerializer
 
 
 class ArtistListView(generics.ListAPIView):
@@ -17,3 +17,8 @@ class ArtistDetailView(generics.RetrieveAPIView):
 class ArtworkListView(generics.ListAPIView):
     queryset = Artwork.objects.all()
     serializer_class = ArtworkSerializer
+
+
+class DisciplineListView(generics.ListAPIView):
+    queryset = Discipline.objects.all()
+    serializer_class = DisciplineSerializer
