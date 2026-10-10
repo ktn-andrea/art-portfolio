@@ -22,3 +22,9 @@ class ArtworkListView(generics.ListAPIView):
 class DisciplineListView(generics.ListAPIView):
     queryset = Discipline.objects.all()
     serializer_class = DisciplineSerializer
+
+
+class DisciplineDetailView(generics.RetrieveAPIView):
+    queryset = Discipline.objects.all()
+    serializer_class = DisciplineSerializer
+    lookup_field = "slug"

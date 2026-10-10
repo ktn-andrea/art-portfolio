@@ -9,6 +9,7 @@ from .models import Artist, Artwork, Discipline
 class ArtistAdmin(admin.ModelAdmin):
     list_display = ("name", "created_at")
     search_fields = ("name",)
+    filter_horizontal = ("disciplines",)
 
 
 @admin.register(Artwork)

@@ -3,59 +3,8 @@
 	margin-inline: auto;
 }
 
-.hero {
-	padding-block: 104px 88px;
-	max-width: 760px;
-}
-
-.eyebrow {
-	margin-bottom: 20px;
-	font-size: 0.75rem;
-	font-weight: 600;
-	letter-spacing: 0.14em;
-	text-transform: uppercase;
-}
-
-.heroTitle {
-	max-width: 700px;
-	margin: 0;
-	font-family: Georgia, "Times New Roman", serif;
-	font-size: clamp(3rem, 7vw, 6.5rem);
-	font-weight: 400;
-	line-height: 0.98;
-	letter-spacing: -0.055em;
-}
-
-.heroDescription {
-	max-width: 540px;
-	margin-top: 24px;
-	font-size: 1.125rem;
-	line-height: 1.7;
-}
-
 .section {
 	padding-block: 48px 80px;
-}
-
-.sectionHeader {
-	display: flex;
-	align-items: end;
-	justify-content: space-between;
-	gap: 24px;
-	margin-bottom: 28px;
-}
-
-.sectionTitle {
-	margin: 0;
-	font-family: Georgia, "Times New Roman", serif;
-	font-size: clamp(2rem, 4vw, 3rem);
-	font-weight: 400;
-	letter-spacing: -0.04em;
-}
-
-.sectionDescription {
-	margin-top: 10px;
-	line-height: 1.6;
 }
 
 .disciplineGrid {
@@ -67,60 +16,6 @@
 	list-style: none;
 }
 
-.disciplineCard {
-	display: block;
-	overflow: hidden;
-	height: 100%;
-	color: inherit;
-	text-decoration: none;
-}
-
-.disciplineImage {
-	display: block;
-	width: 100%;
-	height: auto;
-	aspect-ratio: 4 / 3;
-	object-fit: contain;
-	background-color: #eeebe5;
-	transition: transform 250ms ease;
-}
-
-.disciplineCard:hover .disciplineImage {
-	transform: scale(1.03);
-}
-
-.disciplineCard:hover {
-	border-color: #8b5948;
-	background-color: #f2eee7;
-}
-
-.disciplineName {
-	margin: 0;
-	font-family: Georgia, "Times New Roman", serif;
-	font-size: 1.5rem;
-	font-weight: 400;
-	line-height: 1.2;
-}
-
-.disciplineDescription {
-	margin-top: 8px;
-	color: #66635e;
-	font-size: 0.925rem;
-	line-height: 1.5;
-}
-
-.cardArrow {
-	position: absolute;
-	top: 18px;
-	right: 0;
-	font-size: 1.25rem;
-	transition: transform 180ms ease;
-}
-
-.disciplineCard:hover .cardArrow {
-	transform: translate(3px, -3px);
-}
-
 .artistGrid {
 	display: grid;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -128,38 +23,6 @@
 	padding: 0;
 	margin: 0;
 	list-style: none;
-}
-
-.artistCard {
-	min-width: 0;
-}
-
-.artistName {
-	margin: 0;
-	font-family: Georgia, "Times New Roman", serif;
-	font-size: 1.5rem;
-	font-weight: 400;
-}
-
-.artistLink {
-	color: inherit;
-	text-decoration: none;
-}
-
-.artistLink:hover {
-	color: #8b5948;
-}
-
-.artistBio {
-	margin-top: 10px;
-	color: #66635e;
-	line-height: 1.6;
-}
-
-.artistMeta {
-	margin-top: 16px;
-	color: #77736c;
-	font-size: 0.85rem;
 }
 
 .textLink {
@@ -172,35 +35,6 @@
 	color: #8b5948;
 }
 
-.artistImageLink {
-	display: block;
-	overflow: hidden;
-	margin-bottom: 18px;
-	background-color: #eeebe5;
-	color: inherit;
-	text-decoration: none;
-}
-
-.artistImage {
-	display: block;
-	width: 100%;
-	height: 280px;
-	object-fit: cover;
-	transition: transform 250ms ease;
-}
-
-.artistImageLink:hover .artistImage {
-	transform: scale(1.03);
-}
-
-.artistImagePlaceholder {
-	display: grid;
-	min-height: 220px;
-	place-items: center;
-	color: #77736c;
-	font-size: 0.9rem;
-}
-
 .emptyState {
 	padding-block: 32px;
 	color: #66635e;
@@ -208,25 +42,8 @@
 }
 
 @media (max-width: 760px) {
-	.artistImage {
-		height: 220px;
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.disciplineImage,
-	.cardArrow {
-		transition: none;
-	}
-}
-
-@media (max-width: 760px) {
 	.page {
 		width: min(100% - 32px, 1200px);
-	}
-
-	.hero {
-		padding-block: 72px 56px;
 	}
 
 	.section {
@@ -240,36 +57,5 @@
 	.artistGrid {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 28px 16px;
-	}
-
-	.disciplineCard {
-		min-height: 160px;
-		padding: 18px;
-	}
-
-	.sectionHeader {
-		align-items: start;
-	}
-}
-
-@media (max-width: 480px) {
-	.disciplineGrid,
-	.artistGrid {
-		grid-template-columns: 1fr;
-	}
-
-	.disciplineCard {
-		min-height: 140px;
-	}
-
-	.sectionHeader {
-		flex-direction: column;
-		gap: 16px;
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.disciplineCard {
-		transition: none;
 	}
 }

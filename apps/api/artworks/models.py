@@ -4,6 +4,11 @@ from django.db import models
 class Artist(models.Model):
     name = models.CharField(max_length=200)
     bio = models.TextField(blank=True)
+    cover_image = models.ImageField(
+        upload_to="artist_covers/",
+        blank=True,
+        null=True,
+    )
     disciplines = models.ManyToManyField(
         "Discipline",
         related_name="artists",

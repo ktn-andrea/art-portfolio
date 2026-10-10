@@ -1,0 +1,74 @@
+.artistCard {
+	min-width: 0;
+}
+
+.artistImage {
+	display: block;
+	width: 100%;
+	height: 280px;
+	object-fit: cover;
+	object-position: center;
+	transition: transform 250ms ease;
+}
+
+.artistLink {
+	color: inherit;
+	text-decoration: none;
+}
+
+.artistLink:hover {
+	color: #8b5948;
+}
+
+.artistBio {
+	margin-top: 10px;
+	color: #66635e;
+	line-height: 1.6;
+}
+
+.artistMeta {
+	margin-top: 16px;
+	color: #77736c;
+	font-size: 0.85rem;
+}
+
+.artistImageLink {
+	display: block;
+	overflow: hidden;
+	margin-bottom: 18px;
+	background-color: #eeebe5;
+	color: inherit;
+	text-decoration: none;
+}
+
+.artistImage {
+	display: block;
+	width: 100%;
+	height: 280px;
+	object-fit: cover;
+	transition: transform 250ms ease;
+}
+
+.artistImageLink:hover .artistImage {
+	transform: scale(1.03);
+}
+
+.artistImagePlaceholder {
+	display: grid;
+	min-height: 220px;
+	place-items: center;
+	color: #77736c;
+	font-size: 0.9rem;
+}
+
+@media (max-width: 760px) {
+	.artistImage {
+		height: 220px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.artistImage {
+		transition: none;
+	}
+}

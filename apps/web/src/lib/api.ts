@@ -1,5 +1,6 @@
 import type { Artist } from "../types/artist";
 import type { Discipline } from "../types/discipline";
+import type { DisciplineDetail } from "../types/discipline-detail";
 
 const API_URL = "http://127.0.0.1:8000";
 
@@ -38,6 +39,24 @@ export async function getDisciplines(): Promise<Discipline[]> {
 
 	if (!response.ok) {
 		throw new Error("Failed to fetch disciplines");
+	}
+
+	return response.json();
+}
+
+export async function getDiscipline(
+	slug: string,
+): Promise<DisciplineDetail | null> {
+	const response = await fetch(
+		`${API_URL}/api/disciplines/${encodeURIComponent(slug)}/`,
+	);
+
+	if (response.status === 404) {
+		return null;
+	}
+
+	if (!response.ok) {
+		throw new Error(`Failed to fetch discipline: ${slug}`);
 	}
 
 	return response.json();

@@ -1,0 +1,33 @@
+.sectionHeader {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 24px;
+	margin-bottom: 28px;
+}
+
+.sectionTitle {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: clamp(2rem, 4vw, 3rem);
+	font-weight: 400;
+	letter-spacing: -0.04em;
+}
+
+.sectionDescription {
+	margin-top: 10px;
+	line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+	.sectionHeader {
+		flex-direction: column;
+		gap: 16px;
+	}
+}
+
+@media (max-width: 760px) {
+	.sectionHeader {
+		align-items: start;
+	}
+}
