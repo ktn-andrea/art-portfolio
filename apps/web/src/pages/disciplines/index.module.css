@@ -1,0 +1,67 @@
+.page {
+	width: min(100% - 48px, 1200px);
+	margin-inline: auto;
+}
+
+.pageHeader {
+	max-width: 760px;
+	padding-block: 72px 48px;
+}
+
+.eyebrow {
+	margin-bottom: 16px;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.title {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: clamp(3rem, 7vw, 5rem);
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: -0.05em;
+}
+
+.description {
+	max-width: 540px;
+	margin-top: 20px;
+	line-height: 1.7;
+}
+
+.disciplineGrid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 16px;
+	padding: 0;
+	margin: 0 0 80px;
+	list-style: none;
+}
+
+.emptyState {
+	padding-block: 32px;
+	color: #66635e;
+	line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+	.page {
+		width: min(100% - 32px, 1200px);
+	}
+
+	.pageHeader {
+		padding-block: 56px 36px;
+	}
+
+	.disciplineGrid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 480px) {
+	.disciplineGrid {
+		grid-template-columns: 1fr;
+	}
+}
