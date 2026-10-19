@@ -5,8 +5,20 @@ from .serializers import ArtistSerializer, ArtworkSerializer, DisciplineSerializ
 
 
 class ArtistListView(generics.ListAPIView):
-    queryset = Artist.objects.all()
     serializer_class = ArtistSerializer
+
+    def get_queryset(self):
+        queryset = Artist.objects.all()
+        discipline = self.request.query_params.get("discipline")
+        search = self.request.query_params.get("search")
+
+        if discipline:
+            queryset = queryset.filter(disciplines__slug=discipline)
+
+        if search:
+            queryset = queryset.filter(name__icontains=search)
+
+        return queryset.distinct()
 
 
 class ArtistDetailView(generics.RetrieveAPIView):

@@ -46,6 +46,77 @@
 	line-height: 1.6;
 }
 
+.filters {
+	display: flex;
+	align-items: flex-end;
+	gap: 16px;
+	margin-bottom: 32px;
+}
+
+.searchField,
+.disciplineField {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.searchField {
+	flex: 1;
+	max-width: 420px;
+}
+
+.searchField input,
+.disciplineField select {
+	box-sizing: border-box;
+	min-height: 42px;
+	padding: 10px 12px;
+	border: 1px solid #d5d1ca;
+	border-radius: 4px;
+	background: white;
+	font: inherit;
+}
+
+.disciplineField select {
+	min-width: 200px;
+}
+
+.searchField label,
+.disciplineField label {
+	font-size: 0.9rem;
+}
+
+.filters label {
+	font-size: 0.9rem;
+}
+
+.filters select {
+	min-width: 200px;
+	padding: 10px 12px;
+	border: 1px solid #d5d1ca;
+	border-radius: 4px;
+	background: white;
+	font: inherit;
+}
+
+@media (max-width: 480px) {
+	.filters {
+		align-items: stretch;
+		flex-direction: column;
+	}
+
+	.searchField {
+		max-width: none;
+	}
+
+	.disciplineField select {
+		width: 100%;
+	}
+
+	.filters select {
+		width: 100%;
+	}
+}
+
 @media (max-width: 760px) {
 	.page {
 		width: min(100% - 32px, 1200px);

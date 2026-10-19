@@ -14,8 +14,24 @@ export async function getArtworks() {
 	return response.json();
 }
 
-export async function getArtists(): Promise<Artist[]> {
-	const response = await fetch(`${API_URL}/api/artists/`);
+export async function getArtists(
+	discipline?: string,
+	search?: string,
+): Promise<Artist[]> {
+	const params = new URLSearchParams();
+
+	if (discipline) {
+		params.set("discipline", discipline);
+	}
+
+	if (search) {
+		params.set("search", search);
+	}
+
+	const query = params.toString();
+	const url = `${API_URL}/api/artists/${query ? `?${query}` : ""}`;
+
+	const response = await fetch(url);
 
 	if (!response.ok) {
 		throw new Error("Failed to fetch artists");
